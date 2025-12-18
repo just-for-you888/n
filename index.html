@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Andia</title>
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="cyber.css">
+  <link rel="stylesheet" href="animations.css">
+
+  <style>
+    .display-text {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.85);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 15px;
+      display: none;
+      z-index: 99999;
+      max-width: 90%;
+      animation: fadeIn .3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div id="display-text" class="display-text"></div>
+
+<main class="container fade-up neon-pulse">
+
+  <header class="profile">
+    <div class="avatar-ring float">
+      <img src="avatar.png" alt="avatar">
+    </div>
+
+    <h1 class="username">
+      <span class="glitch neon-text">Amir</span>
+    </h1>
+
+    <p class="bio"></p>
+  </header>
+
+  <section class="links" id="links">
+
+    <!-- ورود با رمز -->
+    <a href="password.html" class="login-link">
+  <i class="fa-solid fa-lock"></i>
+  <span>password message</span>
+</a>
+
+    <!-- پیام‌ها (قفل‌شده) -->
+    <!-- پیام 1 -->
+<!-- پیام 1 -->
+<div class="link-card">
+  <a class="link-button message-link" href="#"
+     data-text="کریسمس مبارک آندیا 🎄🤍">
+    <i class="fa-solid fa-lock"></i>
+    <span>New Message Andia</span>
+  </a>
+</div>
+
+<!-- پیام 2 -->
+<div class="link-card">
+  <a class="link-button message-link" href="#"
+     data-text="😂😂😂😂😂😂😂😂😂😂😂">
+    <i class="fa-solid fa-lock"></i>
+    <span>New Message Andia</span>
+  </a>
+</div>
+
+<!-- پیام 3 -->
+<div class="link-card">
+  <a class="link-button message-link" href="#"
+     data-text="فقط خواستم بدونی همیشه به یادت هستم ✨">
+    <i class="fa-solid fa-lock"></i>
+    <span>New Message Andia</span>
+  </a>
+</div>
+
+<!-- پیام نهایی -->
+<div class="link-card hidden-message" style="display:none">
+  <a class="link-button message-link final-message" href="#"
+     data-text="این آخرین پیامه… چون بقیه رو خوندی 😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂حال داد😂">
+    <i class="fa-solid fa-lock"></i>
+    <span>secret message</span>
+  </a>
+</div>
+
+  </section>
+
+  <footer class="footer">
+    <small>🤍✨</small>
+  </footer>
+
+</main>
+
+<!-- JS جدا -->
+<script src="index.js"></script>
+
+</body>
+</html>

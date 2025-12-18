@@ -1,0 +1,383 @@
+/* =====================================
+   GLOBAL TRANSITION CONTROL (SAFE)
+===================================== */
+* {
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* =====================================
+   FADE / ENTRANCE
+===================================== */
+.fade-up {
+  animation: fadeUp 0.7s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.fade-down {
+  animation: fadeDown 0.7s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.fade-scale {
+  animation: fadeScale 0.6s ease both;
+}
+
+/* =====================================
+   FLOATING (AVATAR)
+===================================== */
+.float {
+  animation: floatSoft 5s ease-in-out infinite;
+}
+
+/* =====================================
+   NEON PULSE (CONTAINER / TEXT)
+===================================== */
+.neon-pulse {
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
+/* =====================================
+   GLOW HOVER
+===================================== */
+.hover-glow:hover {
+  box-shadow:
+    0 0 14px var(--accent-soft),
+    0 0 34px var(--accent-weak);
+}
+
+/* =====================================
+   LINK HOVER FX (FIXED NAME)
+===================================== */
+.link-card {
+  transform-origin: center;
+}
+
+.link-card:hover {
+  animation: linkHover 0.35s ease forwards;
+}
+
+/* =====================================
+   ICON SHAKE
+===================================== */
+.icon-btn:hover i {
+  animation: iconShake 0.4s ease;
+}
+
+/* =====================================
+   GLITCH TEXT (USERNAME)
+===================================== */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.glitch::before {
+  color: #ff2d88;
+  transform: translate(1px, -1px);
+  animation: glitchA 2.8s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  color: var(--accent);
+  transform: translate(-1px, 1px);
+  animation: glitchB 3.2s infinite linear alternate-reverse;
+}
+
+/* =====================================
+   RIPPLE FX (JS)
+===================================== */
+.ripple-effect {
+  animation: rippleExpand 0.6s linear;
+}
+
+/* =====================================
+   MODAL ANIMATION
+===================================== */
+.modal:not(.hidden) .modal-content {
+  animation: modalPop 0.45s cubic-bezier(.2,.8,.2,1);
+}
+
+/* =====================================
+   BACKGROUND MOTION
+===================================== */
+.bg {
+  animation: bgMove 18s linear infinite alternate;
+}
+
+/* =====================================
+   BADGE POP (ONLY VERIFIED)
+===================================== */
+.badge.verified {
+  animation: badgePop 0.6s ease both;
+}
+
+/* =====================================
+   KEYFRAMES
+===================================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeScale {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatSoft {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-10px); }
+}
+
+@keyframes neonPulse {
+  0%,100% {
+    filter: drop-shadow(0 0 10px var(--accent-soft));
+  }
+  50% {
+    filter: drop-shadow(0 0 26px var(--accent));
+  }
+}
+
+@keyframes linkHover {
+  from { transform: scale(1); }
+  to   { transform: scale(1.035); }
+}
+
+@keyframes iconShake {
+  0%   { transform: rotate(0); }
+  25%  { transform: rotate(-6deg); }
+  50%  { transform: rotate(6deg); }
+  75%  { transform: rotate(-3deg); }
+  100% { transform: rotate(0); }
+}
+
+@keyframes glitchA {
+  0%   { clip-path: inset(0 0 90% 0); }
+  50%  { clip-path: inset(40% 0 40% 0); }
+  100% { clip-path: inset(90% 0 0 0); }
+}
+
+@keyframes glitchB {
+  0%   { clip-path: inset(80% 0 0 0); }
+  50%  { clip-path: inset(20% 0 60% 0); }
+  100% { clip-path: inset(0 0 80% 0); }
+}
+
+@keyframes rippleExpand {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.5;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(2.6);
+    opacity: 0;
+  }
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bgMove {
+  from { filter: hue-rotate(0deg); }
+  to   { filter: hue-rotate(25deg); }
+}
+
+@keyframes badgePop {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* ===============================
+   PROFILE CONTAINER (to set the context)
+================================ */
+
+.profile {
+  position: relative; /* مهم برای تنظیم موقعیت قلب در داخل پروفایل */
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* ===============================
+   CYBER THEME CORE (ABSOLUTE FINAL)
+================================ */
+
+:root {
+  --neon-blue: #00fff0;
+  --neon-red: #ff2d55;
+}
+
+/* ===============================
+   BACKGROUND
+================================ */
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 25% 15%, rgba(0,255,240,0.15), transparent 45%),
+    radial-gradient(circle at 75% 85%, rgba(255,45,85,0.12), transparent 45%),
+    linear-gradient(180deg, #01060c, #06121e);
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+
+.container {
+  max-width: 420px;
+  margin: 80px auto 40px;
+  padding: 28px 22px 36px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.015)
+  );
+  border-radius: 30px;
+  box-shadow:
+    0 0 0 1px rgba(0,255,240,0.2),
+    0 40px 120px rgba(0,0,0,0.85);
+  backdrop-filter: blur(24px);
+}
+
+/* ===============================
+   PROFILE
+================================ */
+
+.profile {
+  margin-top: 30px;
+  text-align: center;
+  position: relative;
+}
+
+/* ===============================
+   AVATAR
+================================ */
+
+.avatar-ring {
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 18px;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--neon-blue), transparent 65%);
+  box-shadow:
+    0 0 28px rgba(0,255,240,0.7),
+    inset 0 0 12px rgba(255,255,255,0.15);
+}
+
+.avatar-ring img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ===============================
+   USERNAME (PERFECT)
+================================ */
+
+.username {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.55rem;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+/* فقط متن glitch داره */
+#username-text {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+  z-index: 1;
+  line-height: 1;
+}
+
+/* glitch pseudo elements محدود به متن */
+#username-text::before,
+#username-text::after {
+  pointer-events: none;
+}
+
+/* ===============================
+   HEART ICON POSITION AND STYLE
+================================ */
+
+.heart {
+  position: absolute;
+  top: 120px; /* موقعیت عمودی (کنار پروفایل) */
+  left: 50%; /* موقعیت افقی */
+  margin-left: 40px; /* فاصله از پروفایل */
+  font-size: 15px; /* اندازه قلب بزرگ‌تر */
+  color: #ff2d55; /* رنگ قرمز برای قلب */
+  background-color: rgba(0, 255, 240, 0.2); /* رنگ پس‌زمینه آبی برای حباب */
+  border-radius: 50%; /* گرد کردن قلب */
+  padding: 15px; /* فاصله داخلی برای اندازه مناسب */
+  box-shadow: 0 0 12px rgba(0, 255, 240, 0.6), 0 0 24px rgba(0, 255, 240, 0.4); /* حباب آبی */
+  animation: heartColorChange 6s infinite alternate; /* انیمیشن تغییر رنگ با سرعت مناسب */
+  z-index: 2; /* برای اینکه در بالای پروفایل باشد */
+  width: 30px; /* اندازه دایره دور قلب */
+  height: 30px; /* اندازه دایره دور قلب */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* تنظیم مرکز برای قرار دادن قلب */
+}
+
+@keyframes heartColorChange {
+  0% {
+    background-color: rgba(0, 255, 240, 0.2); /* آبی */
+  }
+  10% {
+    background-color: rgba(255, 45, 85, 0.2); /* قرمز */
+  }
+  10% {
+    background-color: rgba(255, 255, 255, 0.2); /* سفید */
+  }
+}
+
+/* ===============================
+   HEART COLOR ANIMATION (Red ↔ Blue ↔ White)
+================================ */
+
+@keyframes heartColorChange {
+  0% {
+    color: #ff2d55; /* قرمز */
+  }
+  50% {
+    color: #00fff0; /* آبی */
+  }
+  100% {
+    color: #ffffff; /* سفید */
+  }
+}
