@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const lockIcon = document.querySelector(".lock-icon i");
 
   // 🔐 رمز = آیدی تلگرام
-  const CORRECT_PASSWORD = "@anastazi_8_88";
+  const CORRECT_PASSWORD = "@Andiya_RG";
 
   form.addEventListener("submit", e => {
     e.preventDefault();
